@@ -132,6 +132,7 @@ main section div>div>div:hover{
 .foto_contact{
     width: 23px;
     height: 23px;
+    border-radius: 30px;
 }
 iframe{
     width: 800px;
