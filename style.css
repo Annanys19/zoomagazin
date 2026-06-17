@@ -40,7 +40,6 @@ header{
     box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
-
 /* МЕНЮ И КНОПКИ */
 .menu{
     display:flex;
@@ -82,6 +81,9 @@ h2{
     font-size:2.3rem;
     margin-bottom:30px
 }
+h4{
+    text-align:center
+}
 
 /* HERO БЛОК */
 section:first-of-type{
@@ -90,6 +92,41 @@ section:first-of-type{
     align-items:center;
     justify-content:center;
     text-align:center
+}
+
+/*ГЛАВНАЯ СТРАНИЦА*/
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 200px;
+    gap: 15px;
+}
+
+.gallery-item {
+    background-color: #ffaec0;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.gallery-item-1 {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: #f1b9fc;
+}
+
+.gallery-item-3 {
+    grid-column: span 2;
+    background-color: #a5cfff;  
+}
+
+.gallery-item-5 {
+    grid-row: span 2;
+    background-color: #ffc894;
 }
 
 /* ГРИДЫ ДЛЯ КАРТОЧЕК */
@@ -115,6 +152,7 @@ main section div>div>div{
     box-shadow:0 12px 30px rgba(99,65,33,.12);
     transition:.35s;
 }
+
 .home-grid>div:hover,
 .parent1>div:hover,
 main section div>div>div:hover{
@@ -129,23 +167,51 @@ main section div>div>div:hover{
     border-radius:18px;
     margin:12px 0;
 }
+
 .foto_contact{
     width: 23px;
     height: 23px;
     border-radius: 30px;
 }
+
 iframe{
-    width: 800px;
+    width: 900px;
     height: 600px;
+    border-radius: 20px;
 }
+
 .logo_foto{
     width: 100px;
     height: 120px;
-    transition:.3s
+    transition:.3s /*Чтобы элементы менялись не резко, а плавно*/
 }
+
 .logo_foto:hover{
     transform:scale(1.05)
 }
+
+.gal_foto-1{
+    width: 583.5px;
+    height: 385px;
+    border-radius: 20px;
+}
+
+.gal_foto-3{
+    width: 583.5px;
+    height: 170px;
+    border-radius: 20px;
+}
+.gal_foto-5{
+    width: 274.25px;
+    height: 385px;
+    border-radius: 20px;
+}
+.gal_foto-246{
+    width: 274.25px;
+    height: 170px;
+    border-radius: 20px;
+}
+
 /* ФОРМЫ */
 .form1{
     max-width:850px;
@@ -188,19 +254,64 @@ button{
 }
 
 /* ПОДВАЛ */
+.grid_fotter_parent {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 0;
+    place-items: center; /*Для гридов по центру и вертик и горизонт*/
+    box-shadow:0 12px 30px rgba(99,65,33,.12);
+}
+    
+.prodgectt_foot {
+    grid-column: span 3 / span 3;
+}
 
+.contsct_foot {
+    grid-row-start: 2;
+}
+
+.slegka_foot {
+    grid-row-start: 2;
+}
+
+.footer-social {
+    grid-row-start: 2;
+}
+
+.prodgectt_foot2 {
+    grid-column: span 3 / span 3;
+}
+        
 footer{
-    margin: 0;
-    padding: 0;
-    border: 0;
     width: 100%;
     background-color: #634121;
     color: #e6d6c8;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
     padding: 25px 0;
     margin-top: 60px;
+}
+
+.social-grid { /*Грид внутри грида (подвал)*/
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-grid a { /*Кнопка без наведния*/
+    background-color: #dd7733;
+    color: #ffffff;
+    padding: 8px 12px;
+    text-align: center;
+    border-radius: 6px;
+    transition: background-color 0.2s;
+    text-decoration:none /* убирает подчеркивание ссылок*/
+}
+
+.social-grid a:hover { /*При наведении на кнопку*/
+    background-color: #ff6600;  
+    color: #ffffff;
+    text-decoration:none
 }
 
 /* АДАПТИВ */
