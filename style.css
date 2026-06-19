@@ -14,9 +14,11 @@
     padding:0;
     box-sizing:border-box
 }
+
 html{
     scroll-behavior:smooth
 }
+
 body{
     font-family:Arial,sans-serif;
     background:linear-gradient(180deg,#fce7d4,#fff7f0);
@@ -46,6 +48,7 @@ header{
     gap:15px;
     list-style:none
 }
+
 .btn{
     display:inline-block;
     text-decoration:none;
@@ -57,9 +60,34 @@ header{
     box-shadow:10px 8px 5px rgba(34,60,80,.2);
     transition:.3s;
 }
+.btn_glav{
+    display:inline-block;
+    text-decoration:none;
+    color:#fff!important;   
+    padding:10px 22px;
+    border-radius:14px;
+    font-weight:700;
+    box-shadow: 0px 0px 40px 5px rgba(79, 47, 0, 0.39);
+    transition:.3s;
+    background: linear-gradient(189deg, rgb(204, 152, 97) 5%, rgb(66, 31, 8) 92%);
+}
+
 .btn:hover{
     background:var(--primary-light);
     transform:translateY(-3px)
+}
+
+button{
+    width:100%;
+    padding:14px;
+    border:none;
+    cursor:pointer;
+    border-radius:14px;
+    color:#fff!important;
+    box-shadow: 0px 0px 50px 5px rgba(79, 47, 0, 0.39);
+    transition:.3s;
+    font-weight:800;
+    background: linear-gradient(189deg, rgb(204, 152, 97) 5%, rgb(66, 31, 8) 92%);
 }
 
 /* ОХРАННЫЕ ПОЛЯ */
@@ -84,6 +112,10 @@ h2{
 h4{
     text-align:center
 }
+li{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
 
 /* HERO БЛОК */
 section:first-of-type{
@@ -95,6 +127,48 @@ section:first-of-type{
 }
 
 /*ГЛАВНАЯ СТРАНИЦА*/
+
+.sidebar-section {
+    display:grid;
+    max-width:850px;
+    margin:40px auto;
+    background:var(--surface);
+    padding:30px;
+    border-radius:24px;
+    box-shadow:0 12px 30px rgba(99,65,33,.12);
+    grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); /* Размер для catalog карточек*/
+    gap: 26px;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    width: 600px; /* фиксированная ширина */
+    text-align:center
+}
+.sidebar-section a {
+    text-decoration: none;
+    color: #634121;
+    transition: color 0.3s;
+}
+
+.sidebar-section a:hover {
+    color: #634121;
+}
+
+.sidebar-section ul {
+    list-style-type: none; /* убираем маркеры */
+    padding-left: 0; /* убираем отступы слева */
+}
+
+.sidebar-section li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee; /* разделитель между пунктами */
+}
+
+.sidebar-section li:last-child {
+    border-bottom: none; /* убираем разделитель у последнего элемента */
+}
+
+
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -228,15 +302,7 @@ input,textarea,select{
     border:1px solid #e6d6c8;
     margin-top:8px;
 }
-button{
-    width:100%;
-    padding:14px;
-    border:none;
-    cursor:pointer;
-    border-radius:14px;
-    background:var(--primary);
-    color:#fff;
-}
+
 
 /* КОНТАКТЫ */
 .contacts-info{
@@ -285,7 +351,7 @@ button{
         
 footer{
     width: 100%;
-    background-color: #634121;
+    background: linear-gradient(184deg, rgba(87, 63, 45, 0.966) 5%, rgba(51, 31, 1, 0.959) 95%);
     color: #e6d6c8;
     padding: 25px 0;
     margin-top: 60px;
@@ -315,17 +381,15 @@ footer{
 }
 
 /* АДАПТИВ */
-@media(max-width:768px){
-header{
-    flex-direction:column;
-    padding:20px}
-.menu{
-    flex-wrap:wrap;
-    justify-content:center}
-footer>div:first-child{
-    grid-template-columns:1fr
+@media (max-width: 768px) {
+    .page-layout {
+        grid-template-areas:
+            "hero"
+            "features"
+            "popular"
+            "sidebar"
+            "gallery";
+        grid-template-columns: 1fr;
+    }
 }
-h1{
-    font-size:2.4rem
-}
-}
+
