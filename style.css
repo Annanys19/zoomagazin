@@ -53,6 +53,250 @@ header{
     box-shadow:0 8px 25px rgba(0,0,0,.08);
 }
 
+/* СЛАЙДЕР */
+
+.slider-container {
+    text-align: center;
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+}
+
+.slider-image-wrapper {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 12px;
+}
+
+.slider-image-wrapper img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    transition: opacity 0.3s;
+}
+
+.slider-btn {
+    display: grid;
+    align-content: center;
+    background: #58290d;
+    color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.slider-btn:hover {
+    background: #3498db;
+}
+
+.image-counter {
+    margin-top: 15px;
+    font-size: 18px;
+    color: #555;
+}
+
+/* ПЕРЕВОРАЧИВАЮЩИЕСЯ КАРТОЧКИ */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Контейнер карточки */
+.flip-card {
+    background-color: transparent;
+    height: 380px;
+    perspective: 1000px;  /* Создаёт 3D-эффект */
+    cursor: pointer;
+    animation: fadeInUp 0.6s ease forwards;
+    opacity: 0;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Внутренний блок, который вращается */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+/* Переворот при наведении (CSS-версия) */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Если используется класс flipped (для клика) */
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Передняя и задняя стороны карточки */
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;  /* Скрываем обратную сторону */
+    border-radius: 16px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.flip-card-front {
+    background: white;
+}
+
+.flip-card-back {
+    background: #694936;;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.flip-card-icon {
+    font-size: 64px;
+    margin-bottom: 15px;
+}
+
+.flip-card-front h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.flip-card-front p {
+    color: #888;
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.flip-card-back h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.flip-card-back p {
+    font-size: 15px;
+    color: #bdc3c7;
+    margin: 5px 0;
+    text-align: center;
+}
+
+.flip-card-btn {
+    display: inline-block;
+    background: #ff6687;
+    color: white;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: background 0.2s;
+}
+
+.flip-card-btn:hover {
+    background: #ff839e;
+}
+
+/* КАЛЬКУЛЯТОР*/
+.calculator-box{
+    display: grid;
+    justify-content: center;
+}
+
+.calculator-container {
+    background: white;
+    padding: 30px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+    max-width: 420px;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.2s;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #3498db;
+}
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.result p {
+    margin: 8px 0;
+    font-size: 18px;
+}
+
+#finalPrice {
+    font-weight: bold;
+    font-size: 24px;
+    color: #e62243;
+}
+
+#discountAmount {
+    font-weight: bold;
+    color: #ff5d80;
+}
+
+
 /* МЕНЮ И КНОПКИ */
 .menu{
     display:flex;
@@ -196,8 +440,11 @@ section:first-of-type{
 /* ГАЛЕРЕЯ */
 .gallery-grid {
     display: grid;
-    gap: 14px;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+
 }
 
 .gallery-item {
@@ -209,12 +456,20 @@ section:first-of-type{
     align-items: center;
     justify-content: center;
     font-size: 40px;
-    transition: 0.3s;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+    font-weight: bold;
+}
+.gallery-item.show {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .gallery-item:hover {
     transform: scale(1.02);
 }
+
 
 /* ГРИДЫ ДЛЯ КАРТОЧЕК */
 .home-grid,

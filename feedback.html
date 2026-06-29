@@ -65,6 +65,61 @@
             </div>
         <a href="index.html"><button type="submit">Отправить сообщение</button></a>
         </form>
+
+        <h2>Допольнительные услуги</h2>
+    <div class="card-grid">
+        <!-- Карточка 1 -->
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="flip-card-icon">✂️</div>
+                    <h3>Стрижка</h3>
+                    <p>Нажмите или наведите</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Стрижка Premium</h3>
+                    <p>Когти, шерсть, вычёсывание и мытьё</p>
+                    <p>Цена: 2 200 ₽</p>
+                    <a href="contacts.html" class="flip-card-btn">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 2 -->
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="flip-card-icon">📑</div>
+                    <h3>Обучение</h3>
+                    <p>Нажмите или наведите</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Проф кинологи</h3>
+                    <p>Команды, устранение агрессии, развитие</p>
+                    <p>Цена: 5 000 ₽</p>
+                    <a href="contacts.html" class="flip-card-btn">Подробнее</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Карточка 3 -->
+        <div class="flip-card" onclick="this.classList.toggle('flipped')">
+            <div class="flip-card-inner">
+                <div class="flip-card-front">
+                    <div class="flip-card-icon">🦮</div>
+                    <h3>Выгул собак</h3>
+                    <p>Нажмите или наведите</p>
+                </div>
+                <div class="flip-card-back">
+                    <h3>Няни для жвиотных</h3>
+                    <p>Активные и развивающие прогулки с коммуникацией</p>
+                    <p>Цена: от 1 999 ₽</p>
+                    <a href="contacts.html" class="flip-card-btn">Подробнее</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     </main>
 
     <footer>
@@ -100,6 +155,13 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Дополнительная анимация — карточки появляются с задержкой
+        document.querySelectorAll('.flip-card').forEach((card, index) => {
+            card.style.animationDelay = `${index * 0.2}s`;
+        });
+    </script>
 
 </body>
 </html> 
